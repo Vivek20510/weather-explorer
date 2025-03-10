@@ -1,12 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "../index.css";  // Importing styles from index.css
 
 const Navbar = () => {
   return (
-    <nav style={{ padding: "10px", background: "#333", color: "#fff" }}>
-      <Link to="/" style={{ margin: "10px", color: "#fff" }}>Home</Link>
-      <Link to="/search" style={{ margin: "10px", color: "#fff" }}>Search</Link>
-      <Link to="/about" style={{ margin: "10px", color: "#fff" }}>About</Link>
+    <nav className="navbar">
+      <div className="logo">Weather Explorer</div>
+      <ul className="nav-links">
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/search">Search</Link></li>
+        <li><Link to="/about">About</Link></li>
+      </ul>
     </nav>
   );
 };
