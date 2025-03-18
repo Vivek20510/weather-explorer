@@ -1,41 +1,40 @@
-/* Apply box-sizing to all elements */
+/* General Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Arial', sans-serif;
-}
-
-/* Set a global background */
-body {
-  background: linear-gradient(to right, #4facfe, #00f2fe);
-  color: white;
-  text-align: center;
-  min-height: 100vh;
-  padding-top: 70px; /* Adjusted for navbar */
+  font-family: "Poppins", sans-serif;
 }
 
 /* Navbar Styles */
 .navbar {
-  position: fixed;  /* Keeps navbar fixed at the top */
-  top: 0;
-  left: 0;
-  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #333;
-  padding: 15px 30px;
-  color: white;
+  padding: 15px 50px;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   z-index: 1000;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  animation: slideDown 0.6s ease-in-out;
 }
 
+/* Navbar Logo */
 .logo {
-  font-size: 1.8rem;
+  font-size: 24px;
   font-weight: bold;
+  color: #fff;
+  transition: transform 0.3s ease-in-out;
 }
 
+.logo:hover {
+  transform: scale(1.1);
+}
+
+/* Navbar Links */
 .nav-links {
   list-style: none;
   display: flex;
@@ -43,79 +42,250 @@ body {
 }
 
 .nav-links li {
-  display: inline;
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav-links li:hover {
+  transform: translateY(-3px);
 }
 
 .nav-links a {
   text-decoration: none;
   color: white;
-  font-size: 1.2rem;
-  transition: color 0.3s;
+  font-size: 18px;
+  font-weight: 500;
+  transition: color 0.3s ease-in-out;
 }
 
 .nav-links a:hover {
   color: #ffeb3b;
 }
 
-/* Global container for centering */
-.container {
-  width: 100%;
-  max-width: 600px;
-  padding: 20px;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin: auto;
-  margin-top: 50px; /* Prevent overlap with navbar */
-}
-
-/* Title styling */
-h1 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-}
-
-/* Input field */
-input {
-  width: 80%;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  margin-bottom: 10px;
-}
-
-/* Button styles */
-button {
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
-  background-color: #007bff;
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  font-size: 28px;
   color: white;
   cursor: pointer;
-  font-size: 1rem;
-  transition: background 0.3s ease;
 }
 
-button:hover {
-  background-color: #0056b3;
+/* Home Page Styles */
+.home-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  text-align: center;
+  color: white;
+  animation: fadeIn 1s ease-in-out;
 }
 
-/* Weather Info Card */
-.weather-info {
-  margin-top: 20px;
-  padding: 15px;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.hero {
+  max-width: 600px;
+  padding: 20px;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+  animation: slideUp 0.8s ease-in-out;
 }
 
-.weather-info h2 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
+.hero h1 {
+  font-size: 2.5rem;
 }
 
-.weather-info p {
+.hero h1 span {
+  color: #ffeb3b;
+}
+
+.hero p {
   font-size: 1.2rem;
-  margin: 5px 0;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 12px 25px;
+  font-size: 18px;
+  color: #333;
+  background: #ffeb3b;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button:hover {
+  background: #ffc107;
+  transform: translateY(-3px);
+}
+
+/* Search Page Styles */
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.search-box {
+  width: 90%;
+  max-width: 400px;
+  padding: 20px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+  animation: slideUp 0.8s ease-in-out;
+}
+
+.search-input,
+.search-button {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  transition: all 0.3s ease-in-out;
+}
+
+.search-input {
+  border: none;
+  margin-bottom: 10px;
+  outline: none;
+}
+
+.search-button {
+  color: #333;
+  background: #ffeb3b;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.search-button:hover {
+  background: #ffc107;
+  transform: translateY(-3px);
+}
+
+/* About Page Styles */
+.about-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  text-align: center;
+  color: white;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.about-box {
+  max-width: 500px;
+  padding: 20px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+  animation: slideUp 0.8s ease-in-out;
+}
+
+.about-box h2 {
+  font-size: 28px;
+}
+
+.about-box h2 span {
+  color: #ffeb3b;
+}
+
+.about-box p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 15px 30px;
+  }
+
+  .nav-links {
+    gap: 15px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 15px;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 0.9rem;
+  }
+
+  .cta-button {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+
+  .search-box {
+    width: 95%;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 20px;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero p {
+    font-size: 0.8rem;
+  }
+
+  .cta-button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
 }
