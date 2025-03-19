@@ -11,6 +11,19 @@ const About = () => {
           Stay informed about the latest weather conditions with just a few clicks!
         </p>
         <p>Powered by OpenWeather API.</p>
+
+        {/* Developer Credit */}
+        <p className="developer-credit">
+          Developed by{" "}
+          <a 
+            href="https://www.linkedin.com/in/vivek20510" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="developer-link"
+          >
+            Vivek Badodiya
+          </a>
+        </p>
       </div>
     </div>
   );
