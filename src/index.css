@@ -289,3 +289,84 @@
     padding: 8px 16px;
   }
 }
+
+
+/* Suggestions list */
+.suggestions-list {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.suggestions-list li {
+  padding: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.suggestions-list li:hover {
+  background: #007bff;
+  color: white;
+}
+
+.suggestions-list {
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+.suggestions-list li:active {
+  background: #0056b3;
+}
+
+
+/* General Button Styling */
+.button-group {
+  display: flex;
+  gap: 10px; /* Space between buttons */
+  margin-top: 10px;
+}
+
+.search-button,
+.location-button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+/* Use My Location Button Specific Styling */
+.location-button {
+  background-color: #28a745; /* Green color for distinction */
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Space between icon and text */
+}
+
+.location-button:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+.location-button:active {
+  background-color: #1e7e34;
+  transform: scale(0.98);
+}
+
+
+/* weather iocn */
+
+.weather-icon {
+  font-size: 50px; /* Adjust size as needed */
+  margin-top: 10px;
+  color: #007bff; /* Blue shade for a cool effect */
+  text-align: center;
+}
